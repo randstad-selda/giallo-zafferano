@@ -1,0 +1,39 @@
+{
+  "ingredients": [
+    {
+      "id": 1,
+      "name": "Pane",
+      "image": "https://placehold.co/600x400"
+    },
+    {
+      "id": 2,
+      "name": "Latte",
+      "image": "https://placehold.co/600x400"
+    },
+    {
+      "name": "Cacao",
+      "image": "https://wips.plug.it/cips/buonissimo.org/cms/2013/04/adobestock_59545361.jpeg",
+      "id": 3
+    },
+    {
+      "name": "Pomodoro",
+      "image": "https://www.eridano.net/upload/immagini/img618/Pomodoro-tondo-insalataro.jpg",
+      "id": 4
+    },
+    {
+      "name": "Cipolla",
+      "image": "https://myfarmitalia.com/wp-content/uploads/2021/10/cipolla-di-tropea.jpg",
+      "id": 5
+    },
+    {
+      "name": "a",
+      "image": "a",
+      "id": 6
+    },
+    {
+      "name": "aa",
+      "image": "aa",
+      "id": 7
+    }
+  ]
+}
