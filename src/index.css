@@ -29,15 +29,6 @@ input {
   height: 36px;
 }
 
-.btn {
-  border: none;
-  padding: 10px 20px;
-  background-color: brown;
-  color: white;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
 .container {
   max-width: 540px;
   margin: auto;

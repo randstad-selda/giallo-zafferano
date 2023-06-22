@@ -1,16 +1,17 @@
-import { Link } from "react-router-dom";
-import TheHeader from "../components/TheHeader";
+import { useEffect } from "react";
+import { Link, useOutletContext } from "react-router-dom";
 
 export default function NotFoundPage() {
+  const [setPageTitle] = useOutletContext();
+
+  useEffect(() => {
+    setPageTitle("Pagina non trovata");
+  }, []);
+
   return (
     <>
-      <TheHeader title="Pagina 404" />
-      <main>
-        <div className="container">
-          La pagina non è stata trovata.<br></br>
-          <Link to="/">Torna All'home page</Link>
-        </div>
-      </main>
+      La pagina non è stata trovata.<br></br>
+      <Link to="/">Torna All'home page</Link>
     </>
   );
 }

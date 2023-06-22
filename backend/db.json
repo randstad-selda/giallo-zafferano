@@ -1,4 +1,12 @@
 {
+  "users": [
+    {
+      "email": "samuele.madrigali@gmail.com",
+      "password": "$2a$10$DEuboGTLyoz9cOWd0X9E7OjYJwl/Y1oJUx1c.LI8sovlwN8Snu.26",
+      "name": "Samuele",
+      "id": 1
+    }
+  ],
   "ingredients": [
     {
       "id": 1,
@@ -24,6 +32,11 @@
       "name": "Cipolla",
       "image": "https://myfarmitalia.com/wp-content/uploads/2021/10/cipolla-di-tropea.jpg",
       "id": 5
+    },
+    {
+      "name": "Vino",
+      "image": "https://wips.plug.it/cips/initalia.virgilio.it/cms/2020/11/vino.jpg",
+      "id": 6
     }
   ]
 }

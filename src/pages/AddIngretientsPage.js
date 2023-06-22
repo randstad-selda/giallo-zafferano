@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useOutletContext } from "react-router-dom";
 
-import TheHeader from "../components/TheHeader";
 import BaseButton from "../components/BaseButton";
 import BaseLoading from "../components/BaseLoading";
 import BaseModal from "../components/BaseModal";
@@ -18,6 +18,12 @@ export default function AddIngredientsPage() {
   const [isError, setIsError] = useState(false);
   const [success, setSuccess] = useState("");
   const [modalVisible, setModalVisible] = useState(false);
+
+  const [setPageTitle] = useOutletContext();
+
+  useEffect(() => {
+    setPageTitle("Ingredienti");
+  }, []);
 
   function addIngredient(e) {
     e.preventDefault();
@@ -45,42 +51,37 @@ export default function AddIngredientsPage() {
 
   return (
     <>
-      <TheHeader title="Aggiungi ingredienti" />
-      <main>
-        <div className="container">
-          <form onSubmit={addIngredient}>
-            <div>
-              <label forhtml="name">Nome</label>
-              <input
-                id="name"
-                placeholder="Inserisci il nome"
-                value={ingredient.name}
-                onChange={handleInput}
-              />
-            </div>
-            <div>
-              <label forhtml="image">Immagine</label>
-              <input
-                id="image"
-                placeholder="Inserisci url immagine"
-                value={ingredient.image}
-                onChange={handleInput}
-              />
-            </div>
-            <BaseButton content="Crea" />
-          </form>
-          {/* Modale */}
-          <BaseModal
-            title={success ? "Creazione avvenuta con successo" : "Errore"}
-            className={!modalVisible ? "hidden" : ""}
-            onClick={() => setModalVisible(false)}
-          >
-            <p>{success || isError}</p>
-          </BaseModal>
-          {/* Loading */}
-          <BaseLoading className={!isLoading ? "hidden" : ""} />
+      <form onSubmit={addIngredient}>
+        <div>
+          <label forhtml="name">Nome</label>
+          <input
+            id="name"
+            placeholder="Inserisci il nome"
+            value={ingredient.name}
+            onChange={handleInput}
+          />
         </div>
-      </main>
+        <div>
+          <label forhtml="image">Immagine</label>
+          <input
+            id="image"
+            placeholder="Inserisci url immagine"
+            value={ingredient.image}
+            onChange={handleInput}
+          />
+        </div>
+        <BaseButton content="Crea" />
+      </form>
+      {/* Modale */}
+      <BaseModal
+        title={success ? "Creazione avvenuta con successo" : "Errore"}
+        className={!modalVisible ? "hidden" : ""}
+        onClick={() => setModalVisible(false)}
+      >
+        <p>{success || isError}</p>
+      </BaseModal>
+      {/* Loading */}
+      <BaseLoading className={!isLoading ? "hidden" : ""} />
     </>
   );
 }
